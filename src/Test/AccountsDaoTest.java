@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import org.junit.Test;
 
@@ -31,6 +32,7 @@ public class AccountsDaoTest {
 	/** The rs. */
 	ResultSet rs;
 	
+	private Statement stmt;
 	/**
 	 * Test query.
 	 */
@@ -47,16 +49,23 @@ public class AccountsDaoTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		assertEquals(85,row);
+		assertEquals(67,row);
 	}
 	
 	/**
 	 * Test delete.
 	 */
+	@Test
 	public void testDelete() {
-		String sql="delete from payment "
-				+ "where username='孙悟空' and payments='收入' and type='其他' "
-				+ "and money=12.3 and pdate='2020-07-02' and remark=''";
+		String user="孙悟空";
+		String payments="收入";
+		String type="借入";
+		String way="其他";
+		double money=12.30;
+		String pdate="2020-07-02";
+		String remarks="";
+		String sql = "delete from payment where username='" + user + "'and pdate='" + pdate + "'" + "and type='" + type
+				+ "'and way='" + way + "'" + "and money= " + money + " and remarks='" + remarks + "'";
 		String sql2="select * from payment where username='孙悟空'";
 		adao.delete(sql);
 		rs=adao.queryPay(sql2);
@@ -69,18 +78,24 @@ public class AccountsDaoTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		assertEquals(84,row);//删除后的行数
+		assertEquals(67,row);//删除后的行数
 	}
 	
 	/**
 	 * Test save.
 	 */
+	@Test
 	public void testSave() {
-		String sql="insert into payment "
-				+ "set username='孙悟空',payments='收入',type='其他' "
-				+ ",money=12.3 ,pdate='2020-07-02',remark=''";
+		String user="孙悟空";
+		String payments="收入";
+		String type="借入";
+		String way="其他";
+		double money=12.30;
+		String pdate="2020-07-02";
+		String remarks="";
+		String sql = "insert into payment(username,payments,type,way,money,pdate,remarks) values(?,?,?,?,?,?,?)";
 		String sql2="select * from payment where username='孙悟空'";
-		adao.delete(sql);
+		adao.save(sql, user, payments, type, way, money, pdate, remarks);
 		rs=adao.queryPay(sql2);
 		int row=0;
 		try {
@@ -91,6 +106,6 @@ public class AccountsDaoTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		assertEquals(85,row);//删除后的行数
+		assertEquals(68,row);
 	}
 }

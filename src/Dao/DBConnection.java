@@ -7,7 +7,7 @@ import java.sql.SQLException;
 // TODO: Auto-generated Javadoc
 /**
  * The Class DBConnection.
- *
+ * 连接数据库
  * @date 2020-7-3
  * @author 焦易璟
  * @version  v1.0
@@ -16,7 +16,7 @@ public class DBConnection {
 		
 	    /**
     	 * Gets the connection.
-    	 *	获得数据库凝结
+    	 *	获得数据库连接
     	 * @param driverName the driver name
     	 * @param uri the uri
     	 * @return the connection

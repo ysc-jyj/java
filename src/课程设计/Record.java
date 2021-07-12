@@ -96,6 +96,7 @@ public class Record {
 		lblDate = new JLabel("ÈÕÆÚ£º" + currentDate);
 		lblDate.setFont(new Font("Î¢ÈíÑÅºÚ", Font.BOLD, 20));
 		lblDate.setBounds(180, 30, 200, 50);
+		p1.removeAll();
 		p1.add(lblDate);
 		pay.setBounds(200, 100, 70, 30);
 		income.setBounds(300, 100, 70, 30);
@@ -129,6 +130,7 @@ public class Record {
 		p1.add(txtRemarks);
 		btnRecord.setBounds(230, 350, 90, 30);
 		p1.add(btnRecord);
+		p1.validate();
 		btnRecord.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

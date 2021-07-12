@@ -19,7 +19,7 @@ import java.util.Date;
 // TODO: Auto-generated Javadoc
 /**
  * The Class Sheet.
- *
+ * 报表
  * @date 2020-7-3
  * @author 焦易璟
  * @version  v1.0
@@ -56,10 +56,10 @@ public class Sheet {
 	/**
 	 * Instantiates a new sheet.
 	 *
-	 * @param pP the p P
-	 * @param pI the p I
-	 * @param pT the p T
-	 * @param user the user
+	 * @param pP the p P 支出表容器
+	 * @param pI the p I 收入表容器
+	 * @param pT the p T 结余表容器
+	 * @param user the user 用户名
 	 */
 	public Sheet(JPanel pP, JPanel pI, JPanel pT, String user) {
 		model[0] = new DefaultTableModel();
@@ -89,10 +89,10 @@ public class Sheet {
 	}
 
 	/**
-	 * Pay sheet.
+	 * Pay sheet. 显示支出表
 	 *
-	 * @param pP the p P
-	 * @param user the user
+	 * @param pP the p P 支出表容器
+	 * @param user the user 用户名
 	 */
 	public void paySheet(JPanel pP, String user) {
 		panSouth = new JPanel();
@@ -111,10 +111,10 @@ public class Sheet {
 	}
 
 	/**
-	 * Income sheet.
+	 * Income sheet. 显示收入表
 	 *
-	 * @param pI the p I
-	 * @param user the user
+	 * @param pI the p I 收入表容器
+	 * @param user the user 用户名
 	 */
 	public void incomeSheet(JPanel pI, String user) {
 		panSouth = new JPanel();
@@ -133,10 +133,10 @@ public class Sheet {
 	}
 
 	/**
-	 * Total sheet.
+	 * Total sheet. 显示结余表
 	 *
-	 * @param pT the p T
-	 * @param user the user
+	 * @param pT the p T 结余表容器
+	 * @param user the user 用户名
 	 */
 	public void totalSheet(JPanel pT, String user) {
 		pT.removeAll();
@@ -146,11 +146,11 @@ public class Sheet {
 	}
 
 	/**
-	 * Show.
+	 * Show. 查询账目存到JTable
 	 *
-	 * @param user the user
-	 * @param flag the flag
-	 * @param j the j
+	 * @param user the user 用户名
+	 * @param flag the flag 标记收支（收入/支出）
+	 * @param j the j 数组参数
 	 */
 	public void show(String user, String flag, int j) {
 		String sql = "select pdate as 日期,payments as 收支,type as 类别,way as 支付方式," 
@@ -183,10 +183,10 @@ public class Sheet {
 	}
 
 	/**
-	 * Show total.
+	 * Show total. 查询结余存到JTable
 	 *
-	 * @param user the user
-	 * @param j the j
+	 * @param user the user 用户名
+	 * @param j the j 数组参数
 	 */
 	public void showTotal(String user, int j) {
 		String sql = "select Time as 日期,totalPay as 总支出,totalIncome as 总收入,balance as 结余" + " from total"
@@ -219,10 +219,10 @@ public class Sheet {
 	}
 
 	/**
-	 * Delete.
+	 * Delete. 删除选择的数据
 	 *
-	 * @param user the user
-	 * @param i the i
+	 * @param user the user 用户名
+	 * @param i the i 数组参数
 	 */
 	public void delete(String user, int i) {
 		int selectRow = table[i].getSelectedRow();

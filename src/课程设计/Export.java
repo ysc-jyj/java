@@ -48,8 +48,7 @@ public class Export {
 	/**
 	 * Instantiates a new export.
 	 * 
-	 * @param user the user
-	 * 	用户名
+	 * @param user the user 用户名
 	 * 
 	 */
 	public Export(String user) {

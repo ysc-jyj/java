@@ -53,7 +53,7 @@ public class Register {
 	public Register(){
 		frame=new JFrame("注册");
 		lbl=new JLabel("请输入信息：");
-		lbl.setFont(new Font("微软雅黑",Font.BOLD,40));
+		lbl.setFont(new Font("罗西钢笔行楷",Font.BOLD,40));
 		lblUser=new JLabel("用户名：");
 		txtUser=new JTextField(20);
 		lblPwd=new JLabel("密码：");

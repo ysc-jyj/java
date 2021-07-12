@@ -4,7 +4,7 @@ import java.sql.*;
 
 /**
  * The Class AssetsDao.
- *
+ * 资产数据库
  * @date 2020-7-3
  * @author 焦易璟
  * @version  v1.0
@@ -34,14 +34,14 @@ public class AssetsDao {
 	}
 	
 	/**
-	 * Save assets.
+	 * Save assets. 存储用户资产
 	 *
-	 * @param sql the sql
-	 * @param username the username
-	 * @param card the card
-	 * @param weChat the we chat
-	 * @param alipay the alipay
-	 * @param other the other
+	 * @param sql the sql SQL语句
+	 * @param username the username 用户名
+	 * @param card the card 银行卡
+	 * @param weChat the we chat 微信
+	 * @param alipay the alipay 支付宝
+	 * @param other the other 其他
 	 */
 	public void saveAssets(String sql,String username,
 			double card,double weChat,double alipay,double other) {
@@ -60,9 +60,9 @@ public class AssetsDao {
 	}
 	
 	/**
-	 * Query.
+	 * Query. 查询数据
 	 *
-	 * @param sql the sql
+	 * @param sql the sql SQL语句
 	 * @return the result set
 	 */
 	public ResultSet query(String sql) {
@@ -78,7 +78,7 @@ public class AssetsDao {
 	}
 	
 	/**
-	 * Close all.
+	 * Close all.关闭数据库连接
 	 */
 	public void closeAll() {
 		if(!(rs==null)) {

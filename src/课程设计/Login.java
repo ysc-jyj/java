@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 /**
  * The Class Login.
- *
+ * 登录界面
  * @date 2020-7-3
  * @author 焦易璟
  * @version  v1.0
@@ -54,7 +54,7 @@ public class Login {
 		txtUser = new JTextField(20);
 		lblPwd = new JLabel("密码：");
 		lblTitle=new JLabel("欢迎使用个人财务管理系统");
-		lblTitle.setFont(new Font("微软雅黑",Font.ITALIC,30));
+		lblTitle.setFont(new Font("罗西钢笔行楷",Font.ITALIC,30));
 		txtPwd = new JPasswordField(20);
 		txtPwd.setFont(new Font("",Font.BOLD,20));
 		frame.setSize(500, 600);

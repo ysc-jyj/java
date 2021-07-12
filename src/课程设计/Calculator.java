@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 // TODO: Auto-generated Javadoc
 /**
  * The Class Calculator.
-  *  提供计算功能
+  * 计算器
  * @date 2020-7-3
  * @author 焦易璟
  * @version  v1.0
@@ -163,7 +163,7 @@ public class Calculator {
 	/**
 	 * Button event. 所有按钮操作事件
 	 *
-	 * @param btn the btn
+	 * @param btn the btn 按钮
 	 */
 	public void buttonEvent(JButton btn) {// 所有按钮事件
 		btn.addActionListener(new ActionListener() {
